@@ -1,4 +1,5 @@
 import { get, set } from "lodash";
+
 import { configSchema } from "./schema";
 
 class Config {
