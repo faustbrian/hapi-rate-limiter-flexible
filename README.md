@@ -14,13 +14,13 @@ This package was created by, and is maintained by [Brian Faust](https://github.c
 ## Installation
 
 ```bash
-yarn add @konceiver/hapi-rate-limiter-flexible
+npm install @konceiver/hapi-rate-limiter-flexible
 ```
 
 ## Testing
 
 ```bash
-yarn test
+npm run test
 ```
 
 ## Changelog
