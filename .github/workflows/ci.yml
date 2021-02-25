@@ -33,7 +33,7 @@ jobs:
                   token: ${{ secrets.GH_TOKEN }}
 
             - name: Install dependencies
-              run: yarn install --frozen-lockfile
+              run: npm ci
 
             - name: Run Format
               run: yarn run format
@@ -43,22 +43,22 @@ jobs:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
 
-    unit:
-        needs: [format]
+    # unit:
+    #     needs: [format]
 
-        runs-on: ubuntu-latest
+    #     runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
+    #     steps:
+    #         - name: Checkout code
+    #           uses: actions/checkout@v2
+    #           with:
+    #               ref: ${{ github.head_ref }}
 
-            - name: Install dependencies
-              run: yarn install --frozen-lockfile
+    #         - name: Install dependencies
+    #           run: npm ci
 
-            - name: Run Tests
-              run: yarn run test
+    #         - name: Run Tests
+    #           run: yarn run test
 
     publish:
         needs: [unit]
@@ -78,9 +78,9 @@ jobs:
                   registry-url: https://registry.npmjs.org
 
             - name: Install dependencies
-              run: yarn install --frozen-lockfile
+              run: npm ci
 
             - name: Publish to npm
-              run: yarn npm publish --tolerate-republish --access public
+              run: npm publish --tolerate-republish --access public
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
