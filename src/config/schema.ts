@@ -1,4 +1,4 @@
-import Joi from "@hapi/validate";
+import Joi from "joi";
 
 export const configSchema = Joi.object({
 	enabled: Joi.boolean().default(true),
