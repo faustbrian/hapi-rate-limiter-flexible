@@ -43,22 +43,22 @@ jobs:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
 
-    # unit:
-    #     needs: [format]
+    unit:
+        needs: [format]
 
-    #     runs-on: ubuntu-latest
+        runs-on: ubuntu-latest
 
-    #     steps:
-    #         - name: Checkout code
-    #           uses: actions/checkout@v2
-    #           with:
-    #               ref: ${{ github.head_ref }}
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
 
-    #         - name: Install dependencies
-    #           run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-    #         - name: Run Tests
-    #           run: npm run test
+            - name: Run Tests
+              run: npm run test
 
     publish:
         needs: [unit]
