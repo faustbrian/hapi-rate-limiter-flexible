@@ -1,6 +1,6 @@
 {
 	"name": "@konceiver/hapi-rate-limiter-flexible",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "An integration for node-rate-limiter-flexible into hapi.js",
 	"repository": "https://github.com/konceiver/hapi-rate-limiter-flexible",
 	"license": "MIT",
