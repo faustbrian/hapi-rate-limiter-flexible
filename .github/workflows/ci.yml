@@ -33,7 +33,7 @@ jobs:
                   token: ${{ secrets.GH_TOKEN }}
 
             - name: Install dependencies
-              run: yarn install --immutable --immutable-cache
+              run: yarn install --frozen-lockfile
 
             - name: Run Format
               run: yarn run format
@@ -55,7 +55,7 @@ jobs:
                   ref: ${{ github.head_ref }}
 
             - name: Install dependencies
-              run: yarn install --immutable --immutable-cache
+              run: yarn install --frozen-lockfile
 
             - name: Run Tests
               run: yarn run test
@@ -74,13 +74,13 @@ jobs:
             - name: Setup .npmrc file to publish to npm
               uses: actions/setup-node@v1
               with:
-                node-version: 12.x
-                registry-url: https://registry.npmjs.org
+                  node-version: 12.x
+                  registry-url: https://registry.npmjs.org
 
             - name: Install dependencies
-              run: yarn install --immutable --immutable-cache
+              run: yarn install --frozen-lockfile
 
             - name: Publish to npm
               run: yarn npm publish --tolerate-republish --access public
               env:
-                NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
