@@ -34,7 +34,7 @@
 		"@types/hapi__hapi": "^20.0.8",
 		"@types/hapi__hoek": "^9.0.1",
 		"@types/hapi__joi": "^17.1.6",
-		"@types/lodash": "^4.14.169"
+		"@types/lodash": "^4.14.170"
 	},
 	"types": "dist/index"
 }
